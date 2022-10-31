@@ -1,0 +1,42 @@
+
+$button-color: #9e247b;
+$form-color: #f6f6f6;
+$select-color: #ffffff;
+$size-body: 16px;
+
+@function size($sz) {
+  @return $sz * $size-body;
+}
+@mixin border($b) {
+  border-radius: 2vw;
+  outline: none;
+  border: none;
+}
+
+@mixin buttons($bt) {
+  background-color: $button-color;
+}
+@mixin shadows($s) {
+  box-shadow: rgba(195, 195, 195, 0.671) 2px 2px 8px 2px;
+}
+.pago{
+    width: 100vw;
+}
+.rnd {
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    @include shadows(1);
+    @include border(1);
+    &:hover {
+      background-color: #9e247b;
+    }
+
+}
+@media screen and (max-width: 500px) {
+.pago {
+    display: flex;
+    flex-direction: column;
+    
+}
+}

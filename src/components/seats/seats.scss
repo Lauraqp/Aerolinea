@@ -1,0 +1,59 @@
+
+$button-color: #9e247b;
+$form-color: #f6f6f6;
+$select-color: #ffffff;
+$size-body: 16px;
+
+@function size($sz) {
+  @return $sz * $size-body;
+}
+@mixin border($b) {
+  border-radius: 2vw;
+  outline: none;
+  border: none;
+}
+
+@mixin buttons($bt) {
+  background-color: $button-color;
+}
+@mixin shadows($s) {
+  box-shadow: rgba(195, 195, 195, 0.671) 2px 2px 8px 2px;
+}
+.close{
+    background-color: $button-color;
+    color: white;
+    @include border(1);
+    width:150px;
+    &:hover{
+        background-color: $form-color;
+        color: $button-color;
+    }
+}
+
+.div__tittle{
+    font-size: size(1.5);
+}
+
+.div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+    &__buttons{
+        gap: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 3vw;
+        button{
+            width: 150px;
+            height: 80px;
+            background-color: $form-color;
+            @include border(1);
+            @include shadows(1);
+            &:hover{
+                @include buttons(1);
+            }
+        }
+    }
+
+}

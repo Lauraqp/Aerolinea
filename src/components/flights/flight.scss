@@ -1,0 +1,91 @@
+$button-color: #9e247b;
+$form-color: #f6f6f6;
+$select-color: #ffffff;
+$size-body: 16px;
+
+@function size($sz) {
+  @return $sz * $size-body;
+}
+@mixin border($b) {
+  border-radius: 2vw;
+  outline: none;
+  border: none;
+}
+
+@mixin buttons($bt) {
+  background-color: $button-color;
+}
+@mixin shadows($s) {
+  box-shadow: rgba(195, 195, 195, 0.671) 2px 2px 8px 2px;
+}
+
+.flight-container {
+    background-color:$form-color;
+    height: 100%;
+    justify-content: center;
+    font-size: size(1);
+    @include shadows(5);
+}
+.btn {
+    &-change{
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    @include border(1);
+
+    &:hover {
+        @include buttons(1);
+        color: white;
+    }
+    }
+}
+.scale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &__text {
+        font-size: 12px;
+        color: black;
+        margin-bottom: 0;
+    }
+    & hr {
+        width: 70px;
+    }
+}
+.hour {
+    font-size: size(1.5);
+}
+.bag {
+    border: solid 1px $button-color;
+    font-size: 12px;
+    padding: 2px;
+    @include shadows(1);
+
+    &__price {
+        font-weight: 500;
+    }
+    &:hover {
+        background-color: $button-color;
+        color: #fff;
+        cursor: pointer;
+    }
+   
+}
+.mt-4{
+    font-size: size(1);
+}
+.title__country {
+    color: black;
+    font-size: size(1);
+    margin-top: -8px;
+}
+.reservation {
+    background-color: #fff;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:hover{
+        background-color: $button-color;
+    }
+}
